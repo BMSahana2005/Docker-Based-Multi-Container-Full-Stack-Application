@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Profile</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #0f2027, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+    color: #007BFF;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Student Profile</h1>
+
+<input id="name" placeholder="Name">
+<input id="email" placeholder="Email">
+
+<select id="gender">
+<option>Male</option>
+<option>Female</option>
+</select>
+
+<select id="year">
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>4th Year</option>
+</select>
+
+<input id="college" placeholder="College Name">
+<input id="course" placeholder="Course">
+<input id="domain" placeholder="Domain Interest">
+<input id="hobbies" placeholder="Hobbies">
+<input id="extra" placeholder="Extracurricular Activities">
+
+<button onclick="submitData()">Submit</button>
+</div>
+
+<script>
+function submitData() {
+    let data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        gender: document.getElementById("gender").value,
+        year: document.getElementById("year").value,
+        college: document.getElementById("college").value,
+        course: document.getElementById("course").value,
+        domain: document.getElementById("domain").value,
+        hobbies: document.getElementById("hobbies").value,
+        extra: document.getElementById("extra").value
+    };
+
+    localStorage.setItem("studentData", JSON.stringify(data));
+
+    window.location.href = "/view.html";
+}
+</script>
+
+</body>
+</html>

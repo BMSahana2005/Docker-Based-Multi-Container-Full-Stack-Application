@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Your Profile</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: white;
+    color: black;
+    padding: 40px;
+    border-radius: 15px;
+    width: 600px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+h2 {
+    color: #007BFF;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Your Journey</h2>
+    <p id="output"></p>
+</div>
+
+<script>
+let data = JSON.parse(localStorage.getItem("studentData"));
+
+let text = `
+Hi ${data.name}, it's really great to know about you! 
+
+You are currently pursuing your ${data.year} at ${data.college}, studying ${data.course}.  
+Your interest in the ${data.domain} domain shows your passion for growth and learning.  
+
+Its amazing that you enjoy ${data.hobbies} and actively take part in ${data.extra}.  
+These activities truly shape your personality and make you stand out.  
+
+Keep exploring, keep learning, and keep pushing yourself forward.  
+The journey you are on is full of opportunities — make the most of it! 
+`;
+
+document.getElementById("output").innerText = text;
+</script>
+
+</body>
+</html>
